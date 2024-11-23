@@ -1,1 +1,0 @@
-[AUTOTITLE "History Generator"]
