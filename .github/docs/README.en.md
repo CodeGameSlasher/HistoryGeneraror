@@ -8,7 +8,8 @@ So now I made this game on Python.
 2. Download [dictionary](https://drive.google.com/file/d/1bKtPFt3atamavJxHJOZTVQN2L7m545P_/view?usp=drive_link)
 3. Download Python 3.12
 4. Open repository's folder on your PC using CMD/Bash
-5. Enter to CMD/Bash "pip3 install -r requerements.txt"
+5. Remove from "requerements.txt" 2 last strings if you don't wanna use Speaker(so use without silero)
+6. Enter to CMD/Bash "pip3 install -r requerements.txt"
 
 [LAUNCH]
 Using python to launch "main.py" or "main_without_silero.py"
