@@ -108,7 +108,6 @@ if __name__ == '__main__':
                 speaker.say(generator.story)
             case '4':
                 console.print('Пока!')
-                words.save_to_file()
                 exit()
             case _:
                 generator.generate()

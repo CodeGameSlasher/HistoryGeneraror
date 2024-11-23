@@ -13,7 +13,7 @@ class WordList(list[str]):
         self.extend(words)
 
     @classmethod
-    def from_file(cls, filename: str = 'src/words.txt', encoding: str = 'utf-8'):
+    def from_file(cls, filename: str = 'words.txt', encoding: str = 'utf-8'):
         for encode in [encoding, 'utf-8', 'windows-1251']:
             try:
                 with open(filename, 'r', encoding=encode) as file:
@@ -90,7 +90,6 @@ if __name__ == '__main__':
                 generator.set_seed(option[1])
             case '3':
                 console.print('Пока!')
-                words.save_to_file()
                 exit()
             case _:
                 generator.generate()
