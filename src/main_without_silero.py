@@ -36,14 +36,18 @@ class History(list[str]):
         return '' if len(self) < 0 else ' '.join(self).strip().replace('  ', ' ').capitalize()
 
 class HistoryGenerator:
-    def __init__(self, words: WordList):
+    def __init__(self, words: WordList, history: History = History()):
         self.words = words
-        self.history = History()
+        self.history = history
         self.seed = int(time() + len(words))
 
     @property
     def story(self):
         return str(self.history)
+    
+    @story.setter
+    def set_story(self, story: History):
+        self.history = story
     
     @property
     def word_list(self):

@@ -1,4 +1,9 @@
+#standard
 tqdm
 rich
+#silero
 speakerpy
+#checker
 pyspellchecker
+#api_server
+fastapi
