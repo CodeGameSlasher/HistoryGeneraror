@@ -4,7 +4,7 @@
 
 [РАБОТА]
 1. Клонировать репозиторий
-2. Скачать словарь https://drive.google.com/file/d/1bKtPFt3atamavJxHJOZTVQN2L7m545P_/view?usp=drive_link
+2. Скачать [словарь](https://drive.google.com/file/d/1bKtPFt3atamavJxHJOZTVQN2L7m545P_/view?usp=drive_link)
 3. Скачать Python 3.12
 4. Зайти в директорию с файлом requerements.txt
 5. Открыть оттуда Командную Строку
