@@ -9,6 +9,7 @@ print(f'{len(words)} words')
 stories = []
 app = FastAPI()
 
+@app.get('/generate')
 @app.get('/generate{seed}')
 @app.get('/generate/{word_count}')
 @app.get('/generate{seed}/{word_count}')
