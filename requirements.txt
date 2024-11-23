@@ -7,3 +7,4 @@ speakerpy
 pyspellchecker
 #api_server
 fastapi
+uvicorn
