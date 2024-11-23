@@ -8,4 +8,4 @@
 3. Скачать Python 3.12
 4. Зайти в директорию с файлом requerements.txt
 5. Открыть оттуда Командную Строку
-6. Ввести в cmd "pip install -r requerements.txt"
+6. Ввести в cmd "pip3 install -r requerements.txt"
