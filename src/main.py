@@ -36,9 +36,6 @@ class WordList(list[str]):
                     break
             except Exception as e:
                 console.print(f'[red]{e}')
-
-        with open('log', 'w') as file:
-            file.write(f'Last encoding: {encode}\nLength: {len(words)}')
         
         return cls(words)
     
