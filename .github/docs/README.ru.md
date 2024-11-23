@@ -9,3 +9,6 @@
 4. Зайти в директорию с файлом requerements.txt
 5. Открыть оттуда Командную Строку
 6. Ввести в cmd "pip3 install -r requerements.txt"
+
+[ЗАПУСК]
+Запустите "main.py" или "main_without_silero.py" через python(py в cmd)
