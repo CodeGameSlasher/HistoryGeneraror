@@ -3,9 +3,24 @@ from json import loads, dumps
 from random import choice, seed
 
 from rich.console import Console
+from speakerpy.lib_speak import Speaker
+from speakerpy.lib_sl_text import SeleroText
 
 console = Console()
 def cls(): console.clear()
+
+class Voicer(Speaker):
+    def __init__(self, model='v3_1_ru', lang='ru', actor='kseniya', engine='hip'):
+        super().__init__(model, lang, actor, engine)
+
+    def correct_text(self, text):
+        text = SeleroText(text, self.language).text
+        return text
+    
+    def say(self, text, samplerate=48000):
+        for chunk in SeleroText(text, self.language).chunk():
+            self.speak(chunk, samplerate)
+
 
 class WordList(list[str]):
     def __init__(self, words: list[str]):
@@ -67,6 +82,7 @@ class HistoryGenerator:
         
 
 if __name__ == '__main__':
+    speaker = Voicer()
     words = WordList.from_file()
     generator = HistoryGenerator(words)
 
@@ -78,7 +94,8 @@ if __name__ == '__main__':
         console.print('Опции:')
         console.print('\t1. Генерировать слова(введите "1 {число_слов}" для большего числа новых слов за раз)')
         console.print('\t2. Выбор другого сида("2 {сид}", история будет очищена)')
-        console.print('\t3. Выход')
+        console.print('\t3. Проговорить')
+        console.print('\t4. Выход')
         option = input('Выбор: ').split(' ')
 
         match option[0]:
@@ -88,6 +105,8 @@ if __name__ == '__main__':
             case '2':
                 generator.set_seed(option[1])
             case '3':
+                speaker.say(generator.story)
+            case '4':
                 console.print('Пока!')
                 words.save_to_file()
                 exit()
