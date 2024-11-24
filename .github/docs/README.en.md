@@ -1,6 +1,6 @@
 # History Generator
 A lot of time ago my friends have played by cards with word on each.
-One of them takes card by card and from words on theese cards make sentences.
+One of them takes card by card and from words on theese cards make funny sentences.
 So now I made this game on Python.
 
 [DOWNLOAD]
