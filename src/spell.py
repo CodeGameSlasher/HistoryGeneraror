@@ -11,11 +11,10 @@ def correct(text: str) -> str:
     misspelled = spell.unknown(text.translate(str.maketrans(' ', ' ', punctuation)).split(' '))
 
     correct_list: dict[str, str] = {''.join({word}): spell.correction(word) for word in misspelled if word != spell.correction(word) and isinstance(spell.correction(word), str)}
-    print(correct_list)
+
     corrected_text = ''
     for word in text.lower().split():
         word = word.translate(str.maketrans(' ', ' ', punctuation))
-        print(word)
         if correct_list.get(word):
             corrected_text += correct_list.get(word) + ' '
         else:
@@ -24,5 +23,5 @@ def correct(text: str) -> str:
 
 
 if __name__ == "__main__":
-    result = correct('Ало,')
+    result = correct('Алло, Всж')
     print(result)
