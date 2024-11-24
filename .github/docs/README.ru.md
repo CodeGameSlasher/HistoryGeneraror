@@ -13,3 +13,8 @@
 
 # ЗАПУСК
 Запустите "main.py" или "main_without_silero.py" через python(py в cmd)
+
+# Соцсети
+[Twitter](https://x.com/Ghosts_Slasher)
+[Discord](@ghost____slasher)
+[VK](https://vk.com/ghostslasher)
