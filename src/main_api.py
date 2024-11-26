@@ -1,4 +1,4 @@
-from main_without_silero import WordList, HistoryGenerator
+from src import WordList, HistoryGenerator
 from fastapi import FastAPI
 
 words = WordList.from_file('src/words.txt')
