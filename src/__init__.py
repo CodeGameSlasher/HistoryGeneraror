@@ -4,15 +4,14 @@ from random import choice, seed
 
 class WordList(list[str]):
     def __init__(self, words: list[str]):
-        words = [word.strip('\n\r\t ') for word in words if word]
-        self.extend(words)
+        [self.append(word.strip('\n\r\t ')) for word in words if word]
 
     @classmethod
     def from_file(cls, filename: str = 'words.txt', encoding: str = 'utf-8'):
         for encode in [encoding, 'utf-8', 'windows-1251']:
             try:
                 with open(filename, 'r', encoding=encode) as file:
-                    words = [loads(dumps(dict(word=word), ensure_ascii=False)).get('word') for word in file.readlines()]
+                    words = file.readlines() if encode == 'utf-8' else [loads(dumps(dict(word=word), ensure_ascii=False)).get('word') for word in file.readlines()]
                     break
             except Exception as e:
                 continue
