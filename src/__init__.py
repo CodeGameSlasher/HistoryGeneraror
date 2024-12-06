@@ -26,7 +26,7 @@ class WordList(list[str]):
 
 class History(list[str]):
     def __init__(self, history: list[str] = []):
-        self.extend(history)
+        [self.append(item) for item in history]
 
     def __str__(self):
         return '' if len(self) < 0 else ' '.join(self).strip().replace('  ', ' ').capitalize()
