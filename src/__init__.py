@@ -49,7 +49,7 @@ class HistoryGenerator:
     def word_list(self):
         return self.words.copy()
     
-    def set_seed(self, value: str):
+    def set_seed(self, value: str | int):
         if not isinstance(value, int):
             self.seed = int.from_bytes(bytes(value, encoding='utf-8') if isinstance(value, str) else bytes(value))
         self.history = History()

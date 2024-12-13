@@ -1,4 +1,4 @@
-from src import WordList, HistoryGenerator
+from __init__ import WordList, HistoryGenerator
 from fastapi import FastAPI
 
 words = WordList.from_file('src/words.txt')
@@ -13,7 +13,7 @@ app = FastAPI()
 @app.get('/generate{seed}')
 @app.get('/generate/{word_count}')
 @app.get('/generate{seed}/{word_count}')
-def generate_story(word_count: int = None, seed: str | int = None):
+def generate_story(word_count: int | None = None, seed: str | int | None = None):
     if seed is not None:
         generator.set_seed(seed)
     return (generator.generate() if word_count is None else generator.generate(word_count))
