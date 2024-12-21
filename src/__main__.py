@@ -5,7 +5,7 @@ from rich.console import Console
 console = Console()
 def cls(): console.clear()
 
-words = WordList.from_file('src/words.txt')
+words = WordList.from_file(f'{'/'.join(__file__.split('\\')[:-1])}/words.txt')
 generator = HistoryGenerator(words)
 
 while True:
